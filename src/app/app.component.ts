@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [HttpClientModule, RouterModule],
   templateUrl: './app.component.html',
-  standalone: false,
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'MiniProject_MWP';
+  title = 'HelpLink';
 }

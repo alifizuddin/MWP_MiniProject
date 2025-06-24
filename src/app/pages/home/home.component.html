@@ -1,0 +1,65 @@
+<section class="text-center p-10 bg-yellow-100 rounded-xl shadow-md">
+  <h1 class="text-4xl font-bold text-gray-800">Empowering Communities. Ending Poverty.</h1>
+  <p class="mt-4 text-lg text-gray-600">
+    Join us in connecting people to vital resources, opportunities, and support.
+  </p>
+  <section class="p-6">
+  <h2 class="text-2xl font-bold mb-4 text-green-700">Latest News on Poverty</h2>
+
+  <div *ngIf="articles.length === 0">Loading articles...</div>
+
+  <div class="grid gap-4 md:grid-cols-2">
+    <div *ngFor="let article of articles" class="border rounded shadow p-4">
+      <h3 class="text-lg font-semibold">{{ article.title }}</h3>
+      <p class="text-sm text-gray-600">{{ article.publishedAt | date }}</p>
+      <p class="mt-2">{{ article.description }}</p>
+      <a [href]="article.url" target="_blank" class="text-blue-500 underline">Read more</a>
+    </div>
+  </div>
+</section>
+
+
+</section>
+<section class="my-12 p-6 bg-white rounded-xl shadow-md">
+  <h2 class="text-3xl font-semibold text-gray-800 mb-4">What is SDG 1: No Poverty?</h2>
+  <p class="text-gray-700 mb-4 leading-relaxed">
+    Sustainable Development Goal 1 (SDG 1) is a global commitment to end poverty in all its forms everywhere.
+    It aims to ensure equal access to resources, services, and opportunities — especially for the most vulnerable.
+    <br><br>
+    Our platform contributes to this mission by connecting people in need with life-changing resources, 
+    from food assistance and shelter to job opportunities and community support. 
+    Together, we can help reduce poverty and uplift communities.
+  </p>
+
+  <div class="flex flex-wrap gap-6 justify-center items-center mt-6">
+    <img src="assets/sdg1-icon.jpg" alt="SDG 1 Icon" class="w-32">
+    <img src="assets/poverty-infographic.png" alt="Poverty Infographic" class="w-64 rounded-lg shadow">
+  </div>
+</section>
+<section class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12 text-center">
+  <!-- Tile 1 -->
+  <div class="bg-yellow-50 p-6 rounded-lg shadow hover:shadow-lg transition cursor-pointer"
+       (click)="navigateTo('/resources')">
+    <img src="assets/resource.svg" alt="Resources" class="mx-auto w-12 mb-4">
+    <h3 class="font-semibold text-lg">Browse Support Services</h3>
+    <p class="text-sm text-gray-600">Find food banks, shelters, job centers and more.</p>
+  </div>
+
+  <!-- Tile 2 -->
+  <div class="bg-blue-50 p-6 rounded-lg shadow hover:shadow-lg transition cursor-pointer"
+       (click)="navigateTo('/help')">
+    <img src="assets/help.svg" alt="Help" class="mx-auto w-12 mb-4">
+    <h3 class="font-semibold text-lg">Request Help</h3>
+    <p class="text-sm text-gray-600">Reach out for assistance with essentials and services.</p>
+  </div>
+
+  <!-- Tile 3 -->
+  <div class="bg-green-50 p-6 rounded-lg shadow hover:shadow-lg transition cursor-pointer"
+       (click)="navigateTo('/volunteer')">
+    <img src="assets/volunteer.svg" alt="Volunteer" class="mx-auto w-12 mb-4">
+    <h3 class="font-semibold text-lg">Become a Volunteer</h3>
+    <p class="text-sm text-gray-600">Help others by sharing your time, skills, or resources.</p>
+  </div>
+</section>
+
+
