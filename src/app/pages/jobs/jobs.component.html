@@ -1,0 +1,13 @@
+<div *ngIf="loading" class="text-gray-500">Loading global jobs...</div>
+
+<div *ngIf="!loading && jobs.length === 0" class="text-red-500">No jobs available at the moment.</div>
+
+<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" *ngIf="!loading && jobs.length > 0">
+  <div *ngFor="let job of jobs" class="bg-white p-4 rounded-xl shadow hover:shadow-lg transition">
+    <h3 class="text-lg font-bold text-blue-800">{{ job.job_title }}</h3>
+    <p class="text-sm text-gray-600">{{ job.employer_name }}</p>
+    <p class="text-xs text-gray-500">{{ job.job_city }}, {{ job.job_country }}</p>
+    <p class="text-sm text-gray-700 mt-2 line-clamp-3">{{ job.job_description }}</p>
+    <a [href]="job.job_apply_link" target="_blank" class="text-sm text-blue-600 hover:underline mt-2 inline-block">Apply Now →</a>
+  </div>
+</div>

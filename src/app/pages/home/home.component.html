@@ -1,5 +1,7 @@
 <section class="text-center p-10 bg-yellow-100 rounded-xl shadow-md">
-  <h1 class="text-4xl font-bold text-gray-800">Empowering Communities. Ending Poverty.</h1>
+  <h1 class="text-4xl font-bold text-gray-800">HelpLink <br>Empowering Communities. Ending Poverty
+  </h1>
+  
   <p class="mt-4 text-lg text-gray-600">
     Join us in connecting people to vital resources, opportunities, and support.
   </p>
@@ -18,7 +20,6 @@
 
   <div class="flex flex-wrap gap-6 justify-center items-center mt-6">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Sustainable_Development_Goal_01NoPoverty.svg/1200px-Sustainable_Development_Goal_01NoPoverty.svg.png" alt="SDG 1 Icon" class="w-32">
-    <img src="assets/poverty-infographic.png" alt="Poverty Infographic" class="w-64 rounded-lg shadow">
   </div>
 </section>
 <section class="p-6 bg-gray-50 min-h-screen">
@@ -30,9 +31,9 @@
   </div>
 
   <!-- News Grid -->
-  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" *ngIf="articles.length > 0">
-    <div *ngFor="let article of articles" class="bg-white rounded-2xl shadow-md p-4 hover:shadow-lg transition">
-      <img [src]="article.image" alt="News Image" class="w-full h-40 object-cover rounded-xl mb-3" *ngIf="article.image">
+  <div id= "article" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" *ngIf="articles.length > 0">
+    <div id="article-card" *ngFor="let article of articles" class="bg-white rounded-2xl shadow-md p-4 hover:shadow-lg transition">
+      
 
       <h3 class="text-lg font-semibold text-gray-800">{{ article.title }}</h3>
       <p class="text-sm text-gray-500 mb-2">{{ article.publishedAt | date:'mediumDate' }}</p>
@@ -45,27 +46,27 @@
   </div>
 </section>
 
-<section class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12 text-center">
+<section id="bottom" class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12 text-center">
   <!-- Tile 1 -->
-  <div class="bg-yellow-50 p-6 rounded-lg shadow hover:shadow-lg transition cursor-pointer"
+  <div id="resource" class="bg-yellow-50 p-6 rounded-lg shadow hover:shadow-lg transition cursor-pointer"
        (click)="navigateTo('/resources')">
-    <img src="assets/resource.svg" alt="Resources" class="mx-auto w-12 mb-4">
+    <h2 class="font-semibold text-lg">🌐🔗🆔</h2>
     <h3 class="font-semibold text-lg">Browse Support Services</h3>
     <p class="text-sm text-gray-600">Find food banks, shelters, job centers and more.</p>
   </div>
 
   <!-- Tile 2 -->
-  <div class="bg-blue-50 p-6 rounded-lg shadow hover:shadow-lg transition cursor-pointer"
+  <div id="help" class="bg-blue-50 p-6 rounded-lg shadow hover:shadow-lg transition cursor-pointer"
        (click)="navigateTo('/help')">
-    <img src="assets/help.svg" alt="Help" class="mx-auto w-12 mb-4">
+    <h2 class="font-semibold text-lg">🏢🤝🆘</h2>
     <h3 class="font-semibold text-lg">Request Help</h3>
     <p class="text-sm text-gray-600">Reach out for assistance with essentials and services.</p>
   </div>
 
   <!-- Tile 3 -->
-  <div class="bg-green-50 p-6 rounded-lg shadow hover:shadow-lg transition cursor-pointer"
+  <div id="volunteer" class="bg-green-50 p-6 rounded-lg shadow hover:shadow-lg transition cursor-pointer"
        (click)="navigateTo('/volunteer')">
-    <img src="assets/volunteer.svg" alt="Volunteer" class="mx-auto w-12 mb-4">
+    <h2 class="font-semibold text-lg">🌎🫂❤️</h2>
     <h3 class="font-semibold text-lg">Become a Volunteer</h3>
     <p class="text-sm text-gray-600">Help others by sharing your time, skills, or resources.</p>
   </div>

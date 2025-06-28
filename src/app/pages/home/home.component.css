@@ -4,6 +4,43 @@ section {
 }
 
 img {
-  max-width: 20%;
+  max-width: 10%;
   height: auto;
+}
+
+#article {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: auto auto auto auto auto;
+  margin-top: 20px;
+}
+#article-card {
+  background-color: rgb(214, 214, 214);
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+}
+#article-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.527);
+}
+#img-id {
+  width: 100%;
+  height: auto;        /* Or auto/100%, depending on the layout you want */
+  object-fit: contain;  /* ✅ Shows the full image without cropping */
+  border-radius: 10px;
+}
+
+#bottom {
+  background-color: rgb(214, 214, 214);
+  margin-top: 10px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: auto auto auto;
+  margin-top: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
 }
