@@ -7,6 +7,20 @@ img {
   max-width: 10%;
   height: auto;
 }
+#header {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+#intro {
+  background-color: rgb(214, 214, 214);
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+}
 
 #article {
   display: grid;
@@ -43,4 +57,26 @@ img {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   transition: box-shadow 0.3s ease;
+}
+
+#resource {
+  border: 1px solid rgb(100, 100, 100);
+  border-radius: 20px;
+}
+#help {
+  border: 1px solid rgb(100, 100, 100);
+  border-radius: 20px;
+}
+#volunteer {
+  border: 1px solid rgb(100, 100, 100);
+  border-radius: 20px;
+}
+#resource:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.527);
+}
+#help:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.527);
+}
+#volunteer:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.527);
 }
