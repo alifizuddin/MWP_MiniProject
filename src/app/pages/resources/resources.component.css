@@ -2,3 +2,23 @@ section {
   margin-top: 40px;
   text-align: center;
 }
+#header {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+#container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(214, 214, 214);
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+}
+#foodbank, #shelter, #job {
+  flex: 1;
+  margin-right: 20px;
+  border: #333 solid 1px;
+}
