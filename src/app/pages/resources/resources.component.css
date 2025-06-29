@@ -22,3 +22,8 @@ section {
   margin-right: 20px;
   border: #333 solid 1px;
 }
+#foodbank-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
