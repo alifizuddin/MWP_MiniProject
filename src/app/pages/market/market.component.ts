@@ -15,13 +15,13 @@ export class MarketComponent {
       name: 'Beaded Bracelet',
       description: 'Handmade bracelet crafted with colorful beads.',
       price: 15,
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Bracelet.jpg/640px-Bracelet.jpg'
+      image: 'https://inkalloy.com/cdn/shop/files/sage-confetti-beaded-10-strand-stretch-bracelets-multicolor-sbbr0900ms-44715547689153.jpg?v=1740085075'
     },
     {
       name: 'Woven Bag',
       description: 'Eco-friendly woven bag made from recycled materials.',
       price: 40,
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Bags_for_sale.jpg/640px-Bags_for_sale.jpg'
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZZGieQN6kkPLh_q8kqJGeDLki8k-q0IVMIw&s'
     }
   ];
 
