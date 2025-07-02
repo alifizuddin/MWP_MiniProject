@@ -219,3 +219,24 @@ form {
   padding: 1rem;
 }
 
+.form-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center child items horizontally */
+}
+
+.input-field {
+  width: 100%;
+  max-width: 500px; /* ensures inputs don’t stretch too wide */
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.submit-button {
+  max-width: 500px; /* match input width */
+}
+
+
