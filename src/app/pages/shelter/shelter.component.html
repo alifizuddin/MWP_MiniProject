@@ -24,6 +24,12 @@
       <h3 class="text-xl font-semibold text-green-700">{{ shelter.name }}</h3>
       <p class="text-gray-700">{{ shelter.address }}</p>
       <p class="text-sm text-gray-500">Contact: {{ shelter.contact }}</p>
+      <p class="text-sm text-gray-500" *ngIf="shelter.link">
+      Website:
+        <a [href]="shelter.link" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">
+    {{ shelter.link }}
+        </a>
+      </p>
     </div>
   </div>
 

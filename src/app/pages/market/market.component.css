@@ -199,3 +199,21 @@ form {
 .modal-close-top:hover {
   color: #000;
 }
+
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.video-card {
+  width: 100%;
+  max-width: 480px;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+}
+

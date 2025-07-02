@@ -65,3 +65,9 @@ select {
 .product-card:hover {
   transform: translateY(-4px);
 }
+
+a {
+  word-break: break-all;
+  display: inline-block;
+  max-width: 100%;
+}
