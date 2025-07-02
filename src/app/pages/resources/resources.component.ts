@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { FoodbankService } from '../../services/foodbank.service';
 import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-resources',
   standalone: true,
@@ -12,7 +13,10 @@ import { CommonModule } from '@angular/common';
 export class ResourcesComponent implements OnInit {
   foodbanks: any[] = [];
 
-  constructor(private foodbankService: FoodbankService) {}
+  constructor(
+    private foodbankService: FoodbankService,
+    private router: Router // ✅ Add Router here
+  ) {}
 
   ngOnInit(): void {
     this.foodbankService.getFoodBanks().subscribe({
@@ -26,4 +30,8 @@ export class ResourcesComponent implements OnInit {
     });
   }
 
+  // ✅ Method to navigate to market
+  navigateTo(path: string): void {
+    this.router.navigateByUrl(path);
+  }
 }

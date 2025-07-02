@@ -1,0 +1,76 @@
+<section class="market">
+  <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+    <span class="text-4xl">🧵</span> Support Local Artisans
+  </h2>
+
+  <!-- Product Grid -->
+  <div class="product-grid">
+    <div *ngFor="let product of products" class="product-card">
+      <img [src]="product.image" alt="{{ product.name }}" class="product-image" />
+      <h3 class="text-xl font-semibold">{{ product.name }}</h3>
+      <p class="text-sm text-gray-700">{{ product.description }}</p>
+      <p class="text-lg font-bold text-green-600 mt-2">RM {{ product.price }}</p>
+      <button class="buy-button" (click)="openProduct(product)">Buy</button>
+    </div>
+  </div>
+
+  <!-- Form to Submit Product -->
+  <div class="mt-12 max-w-xl mx-auto bg-white p-6 rounded-xl shadow-lg">
+    <h3 class="text-xl font-bold mb-4 text-center">🎨 Add Your Product</h3>
+
+    <form (ngSubmit)="addProduct()" #productForm="ngForm">
+      <input
+        [(ngModel)]="newProduct.name"
+        name="name"
+        type="text"
+        placeholder="Product Name"
+        required
+        class="input-field"
+      />
+      <textarea
+        [(ngModel)]="newProduct.description"
+        name="description"
+        placeholder="Product Description"
+        required
+        class="input-field"
+      ></textarea>
+      <input
+        [(ngModel)]="newProduct.price"
+        name="price"
+        type="number"
+        placeholder="Price (RM)"
+        required
+        class="input-field"
+      />
+      <input
+        type="file"
+        accept="image/*"
+        (change)="handleImageUpload($event)"
+        required
+        class="input-field"
+      />
+
+      <div class="image-preview-wrapper" *ngIf="newProduct.image">
+        <img [src]="newProduct.image" alt="Preview" class="preview-image" />
+      </div>
+
+      <button type="submit" [disabled]="productForm.invalid" class="submit-button">
+        ➕ Submit Product
+      </button>
+    </form>
+  </div>
+
+  <!-- Modal Backdrop -->
+  <div class="modal-backdrop" *ngIf="selectedProduct" (click)="closeProduct()"></div>
+
+  <!-- Modal Panel -->
+  <div class="modal-panel" *ngIf="selectedProduct">
+    <img [src]="selectedProduct.image" alt="Preview" class="modal-image" />
+    <h3 class="text-2xl font-bold mt-4">{{ selectedProduct.name }}</h3>
+    <p class="mt-2 text-gray-700">{{ selectedProduct.description }}</p>
+    <p class="mt-2 font-bold text-green-600 text-xl">RM {{ selectedProduct.price }}</p>
+
+    <button class="modal-buy-button mt-6" (click)="buyProduct()">🛒 Buy Now</button>
+    <button class="modal-close-top" (click)="closeProduct()">✖</button>
+  </div>
+</section>

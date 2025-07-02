@@ -4,4 +4,22 @@ body {
   color: #333;
 }
 
+/* Fix leaflet map icon issue */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
 
+.leaflet-pane,
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow,
+.leaflet-tile-container,
+.leaflet-pane > svg,
+.leaflet-pane > canvas,
+.leaflet-zoom-box,
+.leaflet-image-layer,
+.leaflet-layer {
+  z-index: 0;
+}
