@@ -22,6 +22,10 @@
   min-height: 100vh;
   color: #222;
 }
+#dropdown {
+  align-items: center;
+  max-width: 80%;
+}
 
 .shelter h2 {
   background: rgba(255, 255, 255, 0.85);

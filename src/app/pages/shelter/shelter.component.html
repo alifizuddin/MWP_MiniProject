@@ -11,7 +11,7 @@
   </h2>
 
   <!-- Dropdown -->
-  <div class="max-w-md mx-auto mb-6">
+  <div id="dropdown" class="max-w-md mx-auto mb-6">
     <select [(ngModel)]="selectedState">
       <option value="">-- Select State --</option>
       <option *ngFor="let state of states" [value]="state">{{ state }}</option>
