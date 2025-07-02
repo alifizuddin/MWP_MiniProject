@@ -29,12 +29,6 @@
 
   <!-- Second Row -->
   <div id="bottom-container">
-    <!-- Shelter -->
-    <div id="shelter" class="resource-card clickable" (click)="navigateTo('/market')">
-      <h3 class="section-title">Safe Haven Shelter</h3>
-      <p>Provides temporary housing and meals.</p>
-      <p class="text-sm text-blue-600 mt-2 italic">Click to explore related products</p>
-    </div>
 
     <!-- Job -->
     <div id="job" class="resource-card">
@@ -42,7 +36,23 @@
       <p>Free training and job placements for youth.</p>
       <p class="text-sm text-gray-600">Register online or on-site.</p>
     </div>
+
+        <!-- Shelter -->
+    <div id="shelter" class="resource-card clickable" (click)="navigateTo('/shelter')">
+      <h3 class="section-title">Safe Haven Shelter</h3>
+      <p>Provides temporary housing and meals.</p>
+      <p class="text-sm text-blue-600 mt-2 italic">Click to explore related products</p>
+    </div>
+
+    <!-- local artist -->
+    <div id="artist" class="resource-card clickable" (click)="navigateTo('/market')">
+      <h3 class="section-title">Local Artisan Highlight</h3>
+      <p>Discover unique handmade creations and support talented artists from your community.</p>
+      <p class="text-sm text-gray-600">Register online or on-site.</p>
+    </div>
   </div>
+
+  
 
   <ng-template #loading>
     <p>Loading food banks from OpenStreetMap...</p>

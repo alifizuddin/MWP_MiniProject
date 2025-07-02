@@ -1,0 +1,34 @@
+<section class="p-6">
+  <h2 id="header">Find Nearby Home Shelters</h2>
+  <p class="subtitle">
+    Choose your state to explore available temporary housing and support services near you.
+  </p>
+</section>
+
+<section class="market">
+  <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+    <span class="text-4xl">🏠</span> Shelter Finder
+  </h2>
+
+  <!-- Dropdown -->
+  <div class="max-w-md mx-auto mb-6">
+    <select [(ngModel)]="selectedState">
+      <option value="">-- Select State --</option>
+      <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+    </select>
+  </div>
+
+  <!-- Shelter Cards -->
+  <div class="product-grid" *ngIf="filteredShelters.length > 0; else noResults">
+    <div *ngFor="let shelter of filteredShelters" class="product-card">
+      <h3 class="text-xl font-semibold text-green-700">{{ shelter.name }}</h3>
+      <p class="text-gray-700">{{ shelter.address }}</p>
+      <p class="text-sm text-gray-500">Contact: {{ shelter.contact }}</p>
+    </div>
+  </div>
+
+  <!-- No Results -->
+  <ng-template #noResults>
+    <p class="text-center text-gray-500">No shelters found for the selected state.</p>
+  </ng-template>
+</section>
