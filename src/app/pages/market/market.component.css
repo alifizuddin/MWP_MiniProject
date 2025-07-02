@@ -13,10 +13,12 @@
   margin-bottom: 2rem;
   font-family: 'Segoe UI', sans-serif;
 }
-
+#product {
+  width: 100%;
+}
 
 .market {
-  padding: 2rem;
+
   text-align: center;
   background: url('https://images.unsplash.com/photo-1584467735871-b7c5cbd252bc?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
   backdrop-filter: blur(2px);
@@ -73,7 +75,6 @@
 }
 
 form {
-  margin-top: 4rem;
   background: white;
   padding: 2rem;
   border-radius: 12px;
@@ -81,6 +82,7 @@ form {
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 .input-field {

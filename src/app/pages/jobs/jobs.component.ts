@@ -1,45 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+// src/app/pages/jobs/jobs.component.ts
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { JobService } from '../../services/job.service';
-
-
-interface Job {
-  title: string;
-  description: string;
-  location: string;
-  url: string;
-  [key: string]: any; // ← in case there are other unknown props
-}
 
 @Component({
   selector: 'app-jobs',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './jobs.component.html',
   styleUrls: ['./jobs.component.css']
 })
-export class JobsComponent implements OnInit {
+export class JobsComponent {
   jobs: any[] = [];
+  loading = false;
+  query = 'Developer'; // default search query
 
-  constructor(
-    private jobService: JobService,
+  constructor(private jobService: JobService) {}
 
-  ) {}
+  ngOnInit(): void {
+    this.searchJobs();
+  }
 
-  loading = true;
-
-ngOnInit(): void {
-  this.jobService.getJobs().subscribe({
-    next: (res) => {
-      this.jobs = res.data || [];
-      this.loading = false;
-    },
-    error: (err) => {
-      console.error('Job API error:', err);
-      this.loading = false;
-    }
-  });
-}
-
-
+  searchJobs(): void {
+    if (!this.query.trim()) return;
+    this.loading = true;
+    this.jobService.getJobs(this.query).subscribe({
+      next: (res) => {
+        this.jobs = res.data || [];
+        this.loading = false;
+      },
+      error: (err) => {
+        console.error('Job API error:', err);
+        this.loading = false;
+      }
+    });
+  }
 }
