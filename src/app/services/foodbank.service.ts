@@ -8,7 +8,7 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root'
 })
 export class FoodbankService {
-  private apiUrl = 'https://nominatim.openstreetmap.org/search?format=json&q=food+bank';
+  private apiUrl = 'http://localhost:3000/search?q=food bank';
 
   constructor(private http: HttpClient) {}
 

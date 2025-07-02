@@ -16,15 +16,23 @@ export class ResourcesComponent implements OnInit {
 
   mapSrc: string = 'https://www.openstreetmap.org/export/embed.html?bbox=100.0,1.0,104.0,6.5&layer=mapnik&marker=3.1390,101.6869';
 
-  updateMap(lat: number, lon: number) {
-  const delta = 0.01; // Zoom level adjustment
-  const south = lat - delta;
-  const north = lat + delta;
-  const west = lon - delta;
-  const east = lon + delta;
+  updateMap(lat: number | string, lon: number | string) {
+  const parsedLat = parseFloat(lat as string);
+  const parsedLon = parseFloat(lon as string);
 
-  this.mapSrc = `https://www.openstreetmap.org/export/embed.html?bbox=${west},${south},${east},${north}&layer=mapnik&marker=${lat},${lon}`;
+  const delta = 0.01;
+
+  const minLat = parsedLat - delta;
+  const maxLat = parsedLat + delta;
+  const minLon = parsedLon - delta;
+  const maxLon = parsedLon + delta;
+
+  this.mapSrc = `https://www.openstreetmap.org/export/embed.html?bbox=${minLon},${minLat},${maxLon},${maxLat}&layer=mapnik&marker=${parsedLat},${parsedLon}`;
+
+  console.log('Updated map URL:', this.mapSrc);
 }
+
+
 
   constructor(
     private foodbankService: FoodbankService,
