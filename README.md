@@ -1,4 +1,5 @@
 🌍 Project Summary
+
 Project Title: HelpLink: Tools and Support to End Poverty"
 SDG Focus: Sustainable Development Goal 1 – No Poverty
 Technology: Angular (Rich Internet Application)
